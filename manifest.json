@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Link to selected text",
+  "version": "1.0",
+  "description": "Right-click and select 'Copy link to selected text' to get a link to the selected text.",
+  "permissions": ["contextMenus", "scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
