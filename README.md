@@ -1,4 +1,4 @@
-# ![icon](https://raw.githubusercontent.com/toni20k5267/linkToSeletedText/refs/heads/main/iconSRC.svg) Link to selected text
+# ![icon](https://raw.githubusercontent.com/toni20k5267/linkToSeletedText/refs/heads/main/icon.svg) Link to selected text
 An extension for chromium-based browsers that allows easy linking to selected text.
 
 ## How to install
