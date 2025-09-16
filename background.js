@@ -51,10 +51,11 @@ function encodeTextFragment(text) {
     .replace(/\r/g, '%0D')
     .replace(/\t/g, '%09')
     .replace(/\s/g, '%20')
+    .replace(/\(/g, '%28')
+    .replace(/\)/g, '%29')
     .replace(/,/g, '%2C');
 }
-
-
-
 // yes i used ai to give me the characters themselves. judge me, judge me idc i aint gon be placing them all myself im too lazy lol
+// chat it was a bad idea it didnt give me all of the chars its probabvly fucked but wheatver i still aint searching for all those chars
+
 
