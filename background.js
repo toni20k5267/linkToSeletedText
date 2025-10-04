@@ -9,8 +9,20 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (!info.selectionText || !tab?.url || !tab?.id) return;
 
-  const encoded = encodeTextFragment(info.selectionText.trim());
-  const link = `${tab.url.split('#')[0]}#:~:text=${encoded}`;
+  const selection = info.selectionText.trim();
+  const words = selection.match(/\b[\w’'-]+\b/g);
+  let fragment;
+
+  if (words && words.length >= 8) {
+    const start = encodeTextFragment(words.slice(0, 4).join(' '));
+    const end = encodeTextFragment(words.slice(-4).join(' '));
+    fragment = `#:~:text=${start},${end}`;
+  } else {
+    const exact = encodeTextFragment(selection);
+    fragment = `#:~:text=${exact}`;
+  }
+
+  const link = `${tab.url.split('#')[0]}${fragment}`;
 
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
@@ -57,5 +69,6 @@ function encodeTextFragment(text) {
 }
 // yes i used ai to give me the characters themselves. judge me, judge me idc i aint gon be placing them all myself im too lazy lol
 // chat it was a bad idea it didnt give me all of the chars its probabvly fucked but wheatver i still aint searching for all those chars
+
 
 
