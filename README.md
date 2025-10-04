@@ -15,7 +15,6 @@ An extension for chromium-based browsers that allows easy linking to selected te
 
 ## Disclaimer
 The extension might not work properly when selecting singular words or phrases that repeat on a webpage. I will not be trying to fix this, if it's possible to do so.
-The extension also might not work properly with line-breakers, which is also not something I'm gonna try to fix(again, if it's even possible to fix that).
 
 
 
